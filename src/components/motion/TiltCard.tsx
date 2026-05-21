@@ -1,6 +1,7 @@
 import { motion, useSpring } from "motion/react";
 import { useRef, type MouseEvent, type ReactNode } from "react";
 import { usePrefersReducedMotion } from "@/src/hooks/usePrefersReducedMotion";
+import { useIsTouchDevice } from "@/src/hooks/useIsTouchDevice";
 import { cn } from "@/lib/utils";
 
 type TiltCardProps = {
@@ -10,11 +11,12 @@ type TiltCardProps = {
 
 export function TiltCard({ children, className }: TiltCardProps) {
   const reduced = usePrefersReducedMotion();
+  const touch = useIsTouchDevice();
   const ref = useRef<HTMLDivElement>(null);
   const rotateX = useSpring(0, { stiffness: 220, damping: 24 });
   const rotateY = useSpring(0, { stiffness: 220, damping: 24 });
 
-  if (reduced) {
+  if (reduced || touch) {
     return <div className={className}>{children}</div>;
   }
 

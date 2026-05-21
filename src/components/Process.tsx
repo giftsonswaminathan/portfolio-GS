@@ -31,7 +31,7 @@ export default function Process() {
   return (
     <SectionShell
       id="process"
-      className="border-border/40 border-t py-20 sm:py-24"
+      className="border-border/40 border-t py-14 sm:py-24"
     >
       <SectionHeading
         label="How I work"

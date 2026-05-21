@@ -3,9 +3,17 @@ export const BOOKING_FORM_URL = "https://forms.gle/BDNvbjtEM6YWGHtM9";
 export const CONTACT_EMAIL = "giftsonswaminathan@gmail.com";
 export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
 
+/** India format without + or spaces */
+export const WHATSAPP_NUMBER = "917708863300";
+
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hi Giftson, I found your portfolio and would like to discuss a project.",
+)}`;
+
 export const SOCIAL = {
   instagram: "https://www.instagram.com/webc.raftworks/",
   linkedin: "https://www.linkedin.com/in/giftson-swaminathan-b52627311/",
+  whatsapp: WHATSAPP_URL,
 } as const;
 
 export const PERSON = {
@@ -14,12 +22,14 @@ export const PERSON = {
   initials: "GS",
 } as const;
 
-export type ProjectCategory = "business" | "ecommerce" | "webapp";
+export type ProjectCategory = "design" | "development" | "seo";
 
 export type Project = {
   title: string;
   description: string;
   image: string;
+  /** CDN backup if local preview fails to load */
+  imageFallback?: string;
   tags: string[];
   categories: ProjectCategory[];
   link: string;
@@ -33,25 +43,29 @@ export const projects: Project[] = [
       "A professional business website focused on responsive design, performance optimization, modern branding, and user-friendly navigation.",
     image: "/saloon.png",
     tags: ["Next.js", "SEO Optimized", "Tailwind CSS"],
-    categories: ["business"],
+    categories: ["seo", "design"],
     link: "https://sunlightsaloon.vercel.app/",
   },
   {
     title: "Villa Makers",
     description:
       "A high-end architectural portfolio built with custom animations, grid layouts, and pixel-perfect branding details.",
-    image: "/villa.png",
+    image: "/villa.png?v=2",
+    imageFallback:
+      "https://iad.microlink.io/8kZG-4jk64bSTxftiOQgx2etMAi_1m9i1g6HxA7KM_WQek7XNJz4nr23OG1A1l_JSTOUYQaiaUUFsl3r37X5Hg.png",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    categories: ["business"],
+    categories: ["design"],
     link: "https://villamaker.vercel.app/",
   },
   {
     title: "Chef in a Box",
     description:
       "A full-featured digital ecommerce and booking hub with responsive UI and optimized state management systems.",
-    image: "/chef.png",
+    image: "/chef.png?v=2",
+    imageFallback:
+      "https://iad.microlink.io/W_DO17hA6_Dr2CZQga0z3P8H2KXX9270nVXtX0HD9rJbVA4jUkL_xPppDLBk76jooX5-VPbTitbETr-k-vadUQ.png",
     tags: ["React", "Node.js", "MongoDB", "Express"],
-    categories: ["ecommerce"],
+    categories: ["development", "design"],
     link: "https://chef-in-a-bo.vercel.app/",
   },
 ];

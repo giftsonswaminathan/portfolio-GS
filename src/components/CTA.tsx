@@ -11,7 +11,7 @@ export default function CTA() {
   return (
     <SectionShell
       id="cta"
-      className="relative py-[80px] lg:py-[120px]"
+      className="relative py-16 sm:py-24 lg:py-28"
       size="wide"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(108,99,255,0.2),transparent)]" />
@@ -20,7 +20,7 @@ export default function CTA() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="surface-glass glow-hover mx-auto max-w-4xl rounded-3xl border border-white/10 p-10 text-center sm:p-14"
+        className="surface-glass glow-hover mx-auto max-w-4xl rounded-2xl border border-white/10 p-6 text-center sm:rounded-3xl sm:p-10 lg:p-14"
       >
         <SectionHeading
           label="Ready to start?"

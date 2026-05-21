@@ -10,7 +10,7 @@ export default function About() {
   return (
     <SectionShell
       id="about"
-      className="border-border/40 border-t py-20 sm:py-28"
+      className="border-border/40 border-t py-14 sm:py-24 lg:py-28"
     >
       <motion.div
         initial={reduced ? false : "hidden"}

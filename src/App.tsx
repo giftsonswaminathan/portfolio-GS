@@ -12,6 +12,7 @@ import Skills from "./components/Skills";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function App() {
   return (
@@ -27,10 +28,10 @@ export default function App() {
 
       <ScrollProgress />
 
-      <div className="text-foreground min-h-dvh selection:bg-[#6C63FF]/30 selection:text-white">
+      <div className="text-foreground min-h-dvh overflow-x-hidden selection:bg-[#6C63FF]/30 selection:text-white">
         <Navbar />
 
-        <main id="main-content">
+        <main id="main-content" className="pb-4">
           <Hero />
           <TrustStrip />
           <Portfolio />
@@ -44,6 +45,7 @@ export default function App() {
         </main>
 
         <Footer />
+        <WhatsAppButton />
       </div>
     </>
   );

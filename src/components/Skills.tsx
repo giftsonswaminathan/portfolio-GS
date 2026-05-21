@@ -11,7 +11,7 @@ export default function Skills() {
   return (
     <SectionShell
       id="skills"
-      className="border-border/40 border-t py-20 sm:py-28"
+      className="border-border/40 border-t py-14 sm:py-24 lg:py-28"
       size="wide"
     >
       <SectionHeading

@@ -20,7 +20,7 @@ export function SectionShell({
     <section
       id={id}
       className={cn(
-        "scroll-mt-28 border-border/40 px-4 sm:px-6 lg:px-8",
+        "scroll-mt-24 border-border/40 px-4 sm:scroll-mt-28 sm:px-6 lg:px-8",
         className,
       )}
     >

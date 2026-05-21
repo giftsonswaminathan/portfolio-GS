@@ -32,7 +32,7 @@ export default function Testimonials() {
   return (
     <SectionShell
       id="testimonials"
-      className="border-border/40 border-t py-[64px] lg:py-[120px]"
+      className="border-border/40 border-t py-14 sm:py-24 lg:py-28"
     >
       <SectionHeading
         label="Testimonials"

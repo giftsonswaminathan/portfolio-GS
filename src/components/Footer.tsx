@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Instagram, Linkedin, Mail } from "lucide-react";
+import { WhatsAppIcon } from "@/src/components/WhatsAppButton";
 import { cn } from "@/lib/utils";
 import {
   BOOKING_FORM_URL,
@@ -17,7 +18,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="scroll-mt-28 border-border/40 relative border-t px-4 pt-20 pb-12 sm:px-6 sm:pt-28 lg:px-8"
+      className="scroll-mt-24 border-border/40 relative border-t px-4 pt-16 pb-24 sm:scroll-mt-28 sm:px-6 sm:pt-24 sm:pb-28 lg:px-8"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_70%_100%,oklch(0.28_0.1_280/0.25),transparent)]" />
       <div className="mx-auto max-w-6xl">
@@ -29,7 +30,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="text-4xl leading-[1.05] font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+            <h2 className="text-2xl leading-[1.12] font-semibold tracking-tight sm:text-3xl lg:text-4xl">
               Let&apos;s build{" "}
               <span className="text-gradient-shimmer">something great together</span>
             </h2>
@@ -115,7 +116,16 @@ export default function Footer() {
               {PERSON.name} © {new Date().getFullYear()}
             </span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <a
+              href={SOCIAL.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl p-2 text-[#25D366] transition-colors hover:bg-[#25D366]/10"
+              aria-label="WhatsApp"
+            >
+              <WhatsAppIcon className="size-6" />
+            </a>
             <a
               href={SOCIAL.instagram}
               target="_blank"
